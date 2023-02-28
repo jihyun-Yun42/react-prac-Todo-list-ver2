@@ -64,7 +64,7 @@ height: 540px;
 `
 
 function TodoItem({ todo, setTodo }) {
-  const [text, setText] = useState('')
+  const [text, setText] = useState('');
   const removeBtn = (id) => {
     setTodo(todo.filter(item => item.id !== id))
   }
