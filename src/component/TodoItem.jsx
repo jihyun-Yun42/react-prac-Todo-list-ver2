@@ -70,12 +70,14 @@ function TodoItem({ todo, setTodo }) {
   }
   const editBtn = (id) => {
     setTodo(todo.map(item => item.id === id ? { ...item, edit: !item.edit } : item))
+    setText(todo.find(item => item.id === id).content)
   }
   const isdone = (id) => {
     setTodo(todo.map(item => item.id === id ? { ...item, done: !item.done } : item))
   }
-  const edit = (id) => {
-    setTodo(todo.map(item => item.id === id ? { ...item, content: text } : item))
+  const edit = (id, e) => {
+    e.preventDefault()
+    setTodo(todo.map(item => item.id === id ? { ...item, content: text, edit: !item.edit } : item))
   }
 
 
@@ -88,8 +90,8 @@ function TodoItem({ todo, setTodo }) {
               <CheckCircle className={item.done ? 'working' : 'done'} onClick={() => isdone(item.id)}><MdDone /></CheckCircle>
               {
                 item.edit ?
-                  <form onSubmit={edit}>
-                    <textarea value={text} type="text" onChange={(event) => setText(event.target.value)}>{item.content}</textarea>
+                  <form onSubmit={(event) => edit(item.id, event)}>
+                    <input value={text} type="text" onChange={(event) => setText(event.target.value)} />
                   </form>
                   : <Text className={item.done ? 'workingText' : 'doneText'}>{item.content}</Text>
               }
