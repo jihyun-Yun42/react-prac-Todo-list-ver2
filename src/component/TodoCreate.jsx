@@ -9,23 +9,20 @@ function TodoCreate({ todo, setTodo }) {
     const newTodo = {
       id: todo[todo.length - 1].id + 1,
       content,
-      done: true
+      done: true,
+      edit: false
     }
     setTodo([...todo, newTodo])
     setContent('')
   }
-  const inputBox = document.querySelector('#inputBox')
-  const circle = document.querySelector('#circle')
-
-  const HIDE_CLASSNAME = 'hide'
-
+  const [input, setInput] = useState(false)
   const addInputBox = () => {
-    inputBox.classList.toggle(HIDE_CLASSNAME)
-    circle.classList.toggle('addCircle')
+    setInput(input => !input)
   }
+
   return (
     <div>
-      <form id='inputBox' className='inputBox hide' onSubmit={addTodo}>
+      <form className={input ? 'inputBox' : 'hide'} onSubmit={addTodo}>
         <input
           value={content}
           type="text"
@@ -34,7 +31,7 @@ function TodoCreate({ todo, setTodo }) {
           placeholder='할 일을 입력 후 Enter를 누르세요.' />
       </form>
 
-      <div id='circle' className='circle' onClick={addInputBox}><MdAdd /></div>
+      <div className={input ? 'circle addCircle' : 'circle'} onClick={addInputBox}><MdAdd /></div>
     </div>
   )
 }

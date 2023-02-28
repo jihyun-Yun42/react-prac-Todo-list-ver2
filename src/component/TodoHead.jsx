@@ -2,7 +2,7 @@
 import styled from 'styled-components'
 
 const TodoHeadBlock = styled.div`
-  padding: 30px 30px;
+  padding: 30px 30px 20px;
   border-bottom: 1px solid #e9ecef;
 
   .today {
@@ -37,7 +37,7 @@ function TodoHead({ todo }) {
     <TodoHeadBlock>
       <h1 className='today'>{year}년 {month}월 {date}일</h1>
       <div className='week'>{week[day]}</div>
-      <div className='todo'>할일 {workingNum}개 남음</div>
+      <div className='todo'>할 일 {workingNum}개 남음</div>
       {/* <div>{hour}</div> */}
     </TodoHeadBlock>
   )

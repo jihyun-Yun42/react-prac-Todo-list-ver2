@@ -16,9 +16,9 @@ const TodoTemplateBlock = styled.div`
 
 function TodoTemplate() {
   const INITIAL_STATE = [
-    { id: 1, content: 'todo-list 마무리하기', done: true },
-    { id: 2, content: 'todo-list 마무리하기', done: true },
-    { id: 3, content: 'todo-list 마무리하기', done: true },
+    { id: 1, content: 'todo-list 마무리하기', done: true, edit: false },
+    { id: 2, content: 'todo-list 마무리하기', done: true, edit: false },
+    { id: 3, content: 'todo-list 마무리하기', done: true, edit: false },
   ]
   const [todo, setTodo] = useState(INITIAL_STATE)
   return (

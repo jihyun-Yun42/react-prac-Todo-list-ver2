@@ -10,11 +10,11 @@
   left: 50%;
   bottom: 0px;
   transform: translate(-50%, 50%);
-  background-color: #d870ad;
+  background-color: #efa8d2;
   transition: 0.125s all ease-in;
 }
 .addCircle {
-  background-color: #fa5252;
+  background-color: #fa7952;
   transform: translate(-50%, 50%) rotate(45deg);
 }
 .hide {
@@ -27,10 +27,10 @@
   padding-top: 32px;
   padding-right: 32px;
   padding-bottom: 72px;
-  border-bottom-left-radius: 16px;
-  border-bottom-right-radius: 16px;
+  border-bottom-left-radius: 32px;
+  border-bottom-right-radius: 32px;
   border-top: 1px solid #e9ecef;
-  bottom: 140px;
+  bottom: 127px;
 }
 input {
   width: 100%;
