@@ -26,6 +26,7 @@
 .editdelete {
   display: flex;
   align-items: center;
+  float: right;
 }
 .text {
   flex: 1;
